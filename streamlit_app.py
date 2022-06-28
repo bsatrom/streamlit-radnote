@@ -11,10 +11,6 @@ Select one or more devices from the list below to view readings and device locat
 
 """
 
-"""
-#### Options
-"""
-
 # Initialize connection.
 @st.experimental_singleton
 def init_connection():
@@ -43,6 +39,9 @@ st.metric("# of Devices", device_table.shape[0])
 devices = st.selectbox("Select a device to view data",device_table[device_table.columns[::-1]])
 
 if devices:
+    """
+    #### Options
+    """
     show_charts = st.checkbox('Show charts?', True)
     show_map = st.checkbox('Show map?', True)
     show_table_data = st.checkbox('Show table data?', False)
